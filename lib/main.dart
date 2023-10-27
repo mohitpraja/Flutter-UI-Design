@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_design/core/all_pages.dart';
 import 'package:flutter_ui_design/core/routes.dart';
+import 'package:flutter_ui_design/core/utils/font_family.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
+        // brightness: Brightness.dark,
+        fontFamily: FF.raleway,
         useMaterial3: true,
       ),
       initialRoute: Routes.home,
