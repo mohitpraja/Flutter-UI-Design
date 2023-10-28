@@ -1,12 +1,12 @@
 [
    {
     "name":"Dating App",
-    "image":"",
+    "image":"assets/app/dating_ui.png",
     "route":"/dating_view"
    },
    {
     "name":"Car App",
-    "image":"",
+    "image":"assets/app/car_ui.png",
     "route":"/car_view"
    }
 ]

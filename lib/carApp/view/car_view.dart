@@ -138,10 +138,9 @@ class CarView extends GetView<CarController> {
                 items: controller.carModel.carImages.map((e) {
                   return Container(
                       margin: const EdgeInsets.symmetric(horizontal: 5),
-                      child: FittedBox(
-                          child: Image.asset(
+                      child: Image.asset(
                         e,
-                      )));
+                      ));
                 }).toList(),
                 options: CarouselOptions(
                     onPageChanged: (index, reason) =>

@@ -11,6 +11,9 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter UI Designs'),
+        actions: [IconButton(onPressed: () {
+          
+        }, icon: const Icon(Icons.texture_sharp))],
       ),
       body: Column(
         children: [
@@ -26,13 +29,13 @@ class HomeView extends GetView<HomeController> {
                                 margin: const EdgeInsets.only(left: 10, right: 10, bottom: 15),
                                 alignment: AlignmentDirectional.bottomStart,
                   decoration: BoxDecoration(
-                    color: Colors.primaries[index],
+                    color: const Color(0xfff1f1f1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Stack(
                     children: [
                       Center(
-                          child: Image.asset('assets/images/mail.png',
+                          child: Image.asset(controller.allAppList[index].image!,
                               fit: BoxFit.cover, alignment: Alignment.center)),
                       Positioned(
                           bottom: 0,
