@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_design/core/utils/colors.dart';
 import 'package:flutter_ui_design/core/utils/font_family.dart';
 import 'package:flutter_ui_design/datingApp/controller/dating_conroller.dart';
 import 'package:flutter_ui_design/datingApp/view/dating_profile_view.dart';
@@ -45,7 +46,7 @@ class DatingView extends GetView<DatingController> {
               ),
               Material(
                 elevation: 8.0,
-                shadowColor: Colors.black54,
+                shadowColor: lightBlack,
                 borderRadius: BorderRadius.circular(5),
                 child: TextField(
                   autocorrect: true,
@@ -55,10 +56,11 @@ class DatingView extends GetView<DatingController> {
                   decoration: const InputDecoration(
                       prefixIcon: Icon(
                         Icons.search,
-                        color: Colors.grey,
+                        color: grey,
                       ),
                       contentPadding: EdgeInsets.symmetric(vertical: 10),
                       hintText: 'Search Friends',
+                      hintStyle: TextStyle(fontFamily: FF.raleway),
                       border: InputBorder.none),
                 ),
               ),
@@ -79,7 +81,7 @@ class DatingView extends GetView<DatingController> {
                       padding: const EdgeInsets.all(3.0),
                       child: Obx(() => Text(
                             '${controller.personList.length}',
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(color: white,fontFamily: FF.raleway),
                           )),
                     ),
                   ),
@@ -90,7 +92,7 @@ class DatingView extends GetView<DatingController> {
                         ? const Center(
                             child: Text(
                               'No Data Found',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: grey),
                             ),
                           )
                         : ListView.builder(
@@ -103,7 +105,7 @@ class DatingView extends GetView<DatingController> {
                                   margin: const EdgeInsets.all(5),
                                   child: Material(
                                     elevation: 8.0,
-                                    shadowColor: Colors.black54,
+                                    shadowColor: lightBlack,
                                     borderRadius: BorderRadius.circular(5),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -137,7 +139,7 @@ class DatingView extends GetView<DatingController> {
                                                     const Icon(
                                                       Icons.location_on_sharp,
                                                       size: 12,
-                                                      color: Colors.grey,
+                                                      color: grey,
                                                     ),
                                                     Text(controller
                                                         .personList[index]
@@ -158,6 +160,7 @@ class DatingView extends GetView<DatingController> {
                                                     letterSpacing: 1.5,
                                                     fontSize: 10,
                                                     fontWeight: FontWeight.bold,
+                                                    fontFamily: FF.raleway,
                                                     color: controller
                                                             .personList[index]
                                                             .isOnline!
@@ -173,7 +176,7 @@ class DatingView extends GetView<DatingController> {
                                                         .personList[index]
                                                         .isSaved!
                                                     ? Colors.blue
-                                                    : Colors.grey,
+                                                    : grey,
                                               )
                                             ],
                                           ),

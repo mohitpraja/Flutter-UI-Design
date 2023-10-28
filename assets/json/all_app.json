@@ -1,0 +1,12 @@
+[
+   {
+    "name":"Dating App",
+    "image":"",
+    "route":"/dating_view"
+   },
+   {
+    "name":"Car App",
+    "image":"",
+    "route":"/car_view"
+   }
+]

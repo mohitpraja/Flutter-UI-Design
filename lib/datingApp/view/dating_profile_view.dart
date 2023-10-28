@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_design/core/utils/colors.dart';
+import 'package:flutter_ui_design/core/utils/font_family.dart';
 import 'package:flutter_ui_design/core/widgets/radial_progress.dart';
 import 'package:flutter_ui_design/models/dating_model.dart';
 import 'package:get/get.dart';
@@ -33,7 +35,7 @@ class DatingProfileView extends GetView {
                                   onTap: () => Get.back(),
                                   child: const Icon(
                                     Icons.arrow_back,
-                                    color: Colors.white,
+                                    color: white,
                                   )),
                               const SizedBox(
                                 height: 10,
@@ -41,7 +43,7 @@ class DatingProfileView extends GetView {
                               const Text(
                                 'My Profile',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                                    color: white, fontSize: 20,fontFamily: FF.raleway),
                               ),
                               myInfo()
                             ],
@@ -118,7 +120,7 @@ class DatingProfileView extends GetView {
       margin: const EdgeInsets.all(10),
       child: Material(
         elevation: 10,
-        shadowColor: Colors.black54,
+        shadowColor: lightBlack,
         borderRadius: BorderRadius.circular(10),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -156,7 +158,7 @@ class DatingProfileView extends GetView {
       width: 80,
       child: Material(
         elevation: 10,
-        shadowColor: Colors.black54,
+        shadowColor: lightBlack,
         borderRadius: BorderRadius.circular(10),
         child: Padding(
           padding: const EdgeInsets.all(15),
@@ -218,21 +220,21 @@ class DatingProfileView extends GetView {
         Text(
           datingModel.name!,
           style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+              color: white, fontWeight: FontWeight.bold, fontSize: 20,fontFamily: FF.raleway),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Icon(
               Icons.location_pin,
-              color: Colors.white,
+              color: white,
               size: 14,
             ),
             const SizedBox(
               width: 5,
             ),
             Text(datingModel.address!,
-                style: const TextStyle(color: Colors.white, fontSize: 16)),
+                style: const TextStyle(color: white, fontSize: 16,fontFamily: FF.raleway)),
           ],
         )
       ],
