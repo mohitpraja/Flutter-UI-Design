@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_design/core/utils/font_family.dart';
 import 'package:flutter_ui_design/datingApp/controller/dating_conroller.dart';
+import 'package:flutter_ui_design/datingApp/view/dating_profile_view.dart';
 import 'package:get/get.dart';
 
 class DatingView extends GetView<DatingController> {
@@ -76,10 +77,10 @@ class DatingView extends GetView<DatingController> {
                     alignment: Alignment.center,
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
-                      child: Text(
-                        '${controller.personList.length}',
-                        style: const TextStyle(color: Colors.white),
-                      ),
+                      child: Obx(() => Text(
+                            '${controller.personList.length}',
+                            style: const TextStyle(color: Colors.white),
+                          )),
                     ),
                   ),
                 ],
@@ -95,84 +96,89 @@ class DatingView extends GetView<DatingController> {
                         : ListView.builder(
                             itemCount: controller.personList.length,
                             itemBuilder: (context, index) {
-                              return Container(
-                                margin: const EdgeInsets.all(5),
-                                child: Material(
-                                  elevation: 8.0,
-                                  shadowColor: Colors.black54,
-                                  borderRadius: BorderRadius.circular(5),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 60,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                    controller.personList[index]
-                                                        .image!,
-                                                  ),
-                                                  fit: BoxFit.cover)),
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                              return GestureDetector(
+                                onTap: () => Get.to(() => DatingProfileView(
+                                    controller.personList[index])),
+                                child: Container(
+                                  margin: const EdgeInsets.all(5),
+                                  child: Material(
+                                    elevation: 8.0,
+                                    shadowColor: Colors.black54,
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 60,
+                                            height: 60,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                      controller
+                                                          .personList[index]
+                                                          .image!,
+                                                    ),
+                                                    fit: BoxFit.cover)),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(controller
+                                                    .personList[index].name!),
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.location_on_sharp,
+                                                      size: 12,
+                                                      color: Colors.grey,
+                                                    ),
+                                                    Text(controller
+                                                        .personList[index]
+                                                        .address!),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Column(
                                             children: [
-                                              Text(controller
-                                                  .personList[index].name!),
-                                              Row(
-                                                children: [
-                                                  const Icon(
-                                                    Icons.location_on_sharp,
-                                                    size: 12,
-                                                    color: Colors.grey,
-                                                  ),
-                                                  Text(controller
-                                                      .personList[index]
-                                                      .address!),
-                                                ],
+                                              Text(
+                                                controller.personList[index]
+                                                        .isOnline!
+                                                    ? 'ONLINE'
+                                                    : 'OFFLINE',
+                                                style: TextStyle(
+                                                    letterSpacing: 1.5,
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: controller
+                                                            .personList[index]
+                                                            .isOnline!
+                                                        ? Colors.green
+                                                        : Colors.red),
+                                              ),
+                                              Icon(
+                                                controller.personList[index]
+                                                        .isSaved!
+                                                    ? Icons.star
+                                                    : Icons.star_outline,
+                                                color: controller
+                                                        .personList[index]
+                                                        .isSaved!
+                                                    ? Colors.blue
+                                                    : Colors.grey,
                                               )
                                             ],
                                           ),
-                                        ),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              controller.personList[index]
-                                                      .isOnline!
-                                                  ? 'ONLINE'
-                                                  : 'OFFLINE',
-                                              style: TextStyle(
-                                                  letterSpacing: 1.5,
-                                                  fontSize: 10,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: controller
-                                                          .personList[index]
-                                                          .isOnline!
-                                                      ? Colors.green
-                                                      : Colors.red),
-                                            ),
-                                            Icon(
-                                              controller.personList[index]
-                                                      .isSaved!
-                                                  ? Icons.star
-                                                  : Icons.star_outline,
-                                              color: controller
-                                                      .personList[index]
-                                                      .isSaved!
-                                                  ? Colors.blue
-                                                  : Colors.grey,
-                                            )
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

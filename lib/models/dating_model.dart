@@ -5,7 +5,7 @@ class DatingModel {
   bool? isOnline;
   bool? isSaved;
   String? image;
-  String? progress;
+  double? progress;
   int? level;
   int? newMatches;
   int? unMatched;
@@ -32,7 +32,7 @@ class DatingModel {
     if(json["image"] is String) {
       image = json["image"];
     }
-    if(json["progress"] is String) {
+    if(json["progress"] is double) {
       progress = json["progress"];
     }
     if(json["level"] is int) {
