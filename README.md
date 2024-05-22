@@ -1,16 +1,12 @@
-# flutter_ui_design
+# Flutter UI Design
+Welcome to the Flutter UI Design App repository! This repository contains the source code for an flutter application 
 
-A new Flutter project.
+## Car Design UI :
+#### Source Code 
+> https://github.com/mohitpraja/Flutter-UI-Design/tree/main/lib/carApp
+<img src="assets/app/car_ui.png" alt="car_design_ui">
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dating App UI :
+#### Source Code 
+> https://github.com/mohitpraja/Flutter-UI-Design/tree/main/lib/datingApp
+<img src="assets/app/dating_ui.png" alt="dating_app_ui">
